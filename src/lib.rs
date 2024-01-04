@@ -18,5 +18,5 @@ pub fn derive_inherit(input: TokenStream) -> TokenStream {
             }.into()
         }
     }
-    panic!("Inherit only support struct with named field")
+    panic!("Inherit only support struct with named field, which must be first.")
 }
