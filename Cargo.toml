@@ -1,6 +1,6 @@
 [package]
 name = "inherit"
-version = "0.0.0"
+version = "0.0.1"
 edition = "2021"
 description = "A Rust inherit derive macro"
 repository = "https://github.com/hzqd/inherit"
