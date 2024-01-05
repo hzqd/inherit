@@ -1,3 +1,4 @@
+#![no_std]
 use proc_macro::TokenStream;
 use quote::quote;
 use syn::{Data, Fields, DataStruct, Field, FieldsNamed};
@@ -9,7 +10,7 @@ pub fn derive_inherit(input: TokenStream) -> TokenStream {
     if let Data::Struct(DataStruct { fields: Fields::Named(FieldsNamed { named, .. }), .. }) = input.data {
         if let Some(Field { ident: Some(id), ty, .. }) = named.into_iter().next() {
             return quote! {
-                impl Deref for #class {
+                impl core::ops::Deref for #class {
                     type Target = #ty;
                     fn deref(&self) -> &Self::Target {
                         &self.#id
